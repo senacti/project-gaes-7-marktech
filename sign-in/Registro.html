@@ -1,0 +1,121 @@
+<html class="5">
+    <!DOCTYPE html>
+    <html>
+    <head>
+         <title>Registro de usuario; </title>
+
+         <link rel="Sidebar" href="Registro.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2;
+                    height: 100%;
+                    box-shadow: black;
+                  }
+                  
+                  body {
+                    display: flex;
+                    align-items: center;
+                    padding-top: 40px;
+                    padding-bottom: 40px;
+                    background-image: url("img/Collage\ de\ Fotos\ Moodboard\ Orgullo\ Photo\ Collage.png");
+                    background-repeat: no-repeat;
+                    
+            }
+    
+            form {
+                margin: 30px auto;
+                width: 30%;
+                background-color: #fff;
+                border-radius: 5px;
+                padding: 20px;
+                box-shadow: 2px 2px 5px #ccc;
+            }
+    
+            h1 {
+                text-align: center;
+                color: #000000;
+                font-size: 36px;
+                margin-top: 0;
+            }
+    
+            label {
+                display: block;
+                font-size: 18px;
+                color: #000000;
+                margin-bottom: 10px;
+            }
+    
+            input[type=text], input[type=email], input[type=password] {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin-bottom: 20px;
+                font-size: 16px;
+                background-color: rgb(230, 230, 230);
+                color: #333;
+                transition: all 0.3s;
+            }
+    
+            input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+                outline: none;
+                border: 2px solid #5a5aff;
+                background-color: #fff;
+                color: #333;
+                box-shadow: 2px 2px 5px #ccc;
+            }
+    
+            input[type=submit] {
+                background-color: #0d6efd;
+                color: #fff;
+                padding: 20px 20px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                float: left;
+                margin-left: 235px;
+                font-size: 18px;
+                transition: all 0.3s;
+            }
+    
+            input[type=submit]:hover {
+                background-color: #333;
+                color: #fff;
+                box-shadow: 2px 2px 5px #ccc;
+            }
+    
+            .error {
+                color: #ff0000;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+    
+            .success {
+                color: #008000;
+                font-size: 14px;
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <form>
+            <h1>Registro de usuario</h1>
+    
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+    
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Ingresa tu email" required>
+    
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+    
+            <label for="confirm_password">Confirmar contraseña:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirma tu contraseña" required>
+    
+            <input type="submit" value="Registrar"> </body> </form>
