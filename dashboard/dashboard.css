@@ -10,17 +10,7 @@ body {
 /*
  * Sidebar
  */
- table {
-	border-collapse: collapse;
-}
 
-table,
-th,
-td {
-	border: 1px solid rgba(0, 0, 0, .1);
-	padding: 10px;
-	text-align: center;
-}
 .sidebar {
   position: fixed;
   top: 0;
@@ -70,6 +60,10 @@ td {
   font-size: .75rem;
 }
 
+/*
+ * Navbar
+ */
+
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
@@ -97,19 +91,6 @@ td {
   box-shadow: 0 0 0 3px #874a35;
 }
 #opciones {
-  margin-top: 50px;
+  margin-top: 50px; /* Ajusta el valor según sea necesario para que las opciones queden por debajo de la barra superior */
 }
-.container {
-  margin: auto;
-  width: 50%;
-}
-#cantidad {
-  width: 150px;
-}
-#cantidad2 {
-  width: 150px;
-}
-.logo {
-  width: 40%;
-  height: 40%;
-}
+
