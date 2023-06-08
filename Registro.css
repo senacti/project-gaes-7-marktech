@@ -1,0 +1,14 @@
+html
+
+body {
+    height: 100%;
+    box-shadow: black;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-image: url(Collage\ de\ Fotos\ Moodboard\ Orgullo\ Photo\ Collage.png);
+  }  

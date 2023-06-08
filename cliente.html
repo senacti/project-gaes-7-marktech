@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>Ordenes</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+
+    
+
+    
+
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      label {
+        font-size: 15px;
+        color: black;
+      }
+      input[type="text"], select {
+        font-size: 15px;
+        padding: auto;
+        color: black;
+      }
+      h3 {
+        font-size: 25px;
+      }
+
+
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+        <img src="panne.png" alt="" width="40%" width="40%">
+      </a>
+  </a>
+
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="sign-in.html">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3 sidebar-sticky">
+        <ul class="nav flex-column">
+          <div id="opciones"></div>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="mispedidos.html">
+              <span data-feather="home" class="align-text-bottom"></span>
+              Historial de compras
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file" class="align-text-bottom"></span>
+              Mis Datos  
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart" class="align-text-bottom"></span>
+              Quejas y reclamos 
+            </a>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
+              Mis puntos
+            </a>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+       
+        <div class="btn-toolbar mb-2 mb-md-0">
+        </div>
+      </div>                  
+    </div>   
+  </div>
+  <div style="padding-left: 200px" class="container my-5">
+    
+
+    <form class="card p-2">
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Datos </h4>
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombres</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="username" class="form-label">Nombre de usuario</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text">@</span>
+              <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <div class="invalid-feedback">
+                Your username is required.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <label for="address" class="form-label">Numero de documento C.C</label>
+            <input type="text" class="form-control" id="address" placeholder="" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+
+            <div class="col-12">
+                <label for="address" class="form-label">Celular</label>
+                <input type="text" class="form-control" id="address" placeholder="" required>
+                <div class="invalid-feedback">
+                  Please enter your shipping address.
+                </div>
+
+          <div class="col-12">
+            <label for="email" class="form-label">Correo electronico<span class="text-body-secondary">(Opcional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="iasdn@Ejemplo.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="address" class="form-label">Direccion</label>
+            <input type="text" class="form-control" id="address" placeholder="" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+          </div>
+
+         
+          <div class="col-md-5">
+            <label for="country" class="form-label">Localidad</label>
+            <select class="form-select" id="country" required>
+              <option value="">Seleccionar.. </option>
+              <option>Usaquén </option>
+              <option>Chapinero</option>
+              <option>Santa Fe</option>
+              <option>San Cristóbal</option>
+              <option>Usme</option>
+              <option>Tunjuelito</option>
+              <option>Kennedy</option>
+              <option>Bosa</option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+
+</div>
+<br>
+<br>
+<br>
+<br>    
+<li class="list-group-item d-flex justify-content-between lh-sm">
+  <form>
+    <label for="producto">Producto:</label>
+    <select id="producto">
+      <option value="">Selecciona un producto</option>
+      <option value="Rollo">Rollo</option>
+      <option value="Mogolla">Mogolla</option>
+      <option value="Coco">Coco</option>
+      <option value="Queso">Queso</option>
+      <option value="Roscon">Roscon</option>
+      <option value="Chicharrona">Chicharrona</option>
+      <option value="Calentano">Calentano</option>
+      
+    </select>
+    <label for="cantidad">Cantidad:</label>
+    <input type="number" id="cantidad" min="1" value="1">
+    <button type="button" onclick="agregarProducto()">Agregar</button>
+  </form>
+  
+
+  <script>
+    var carrito = [];
+    var precios = {
+      Rollo: 400,
+      Mogolla: 400,
+      Coco: 400,
+      Queso: 400,
+      Roscon: 400,
+      Chicharrona: 400,
+      Calentano: 400,
+
+    };
+
+    function agregarProducto() {
+      var producto = document.getElementById("producto").value;
+      var cantidad = parseInt(document.getElementById("cantidad").value);
+      if (producto && cantidad) {
+        if (!carrito[producto]) {
+          carrito[producto] = {
+            cantidad: cantidad,
+            precio: precios[producto]
+          };
+        } else {
+          carrito[producto].cantidad += cantidad;
+        }
+        actualizarTabla();
+      }
+    }
+
+    function actualizarTabla() {
+      var tabla = document.getElementById("tablaCarrito").getElementsByTagName("tbody")[0];
+      tabla.innerHTML = "";
+      var totalPrecio = 0;
+      for (var producto in carrito) {
+        var cantidad = carrito[producto].cantidad;
+        var precioUnitario = carrito[producto].precio;
+        var precioTotal = cantidad * precioUnitario;
+        totalPrecio += precioTotal;
+        var fila = tabla.insertRow();
+        var celdaProducto = fila.insertCell(0);
+        celdaProducto.innerHTML = producto;
+        var celdaCantidad = fila.insertCell(1);
+        celdaCantidad.innerHTML = cantidad;
+        var celdaPrecioUnitario = fila.insertCell(2);
+        celdaPrecioUnitario.innerHTML = precioUnitario;
+        var celdaPrecioTotal = fila.insertCell(3);
+        celdaPrecioTotal.innerHTML = precioTotal;
+      }
+      document.getElementById("totalPrecio").innerHTML = totalPrecio;
+    }
+
+    function confirmarCompra() {
+      var totalPrecio = 0;
+      for (var producto in carrito) {
+        var cantidad = carrito[producto].cantidad;
+        var precioUnitario = carrito[producto].precio;
+        var precioTotal = cantidad * precioUnitario;
+        totalPrecio += precioTotal;
+      }
+      if (totalPrecio > 0) {
+        alert("El precio total a pagar es: " + totalPrecio);
+        carrito = [];
+        actualizarTabla();
+      }
+    }
+  </script>
+</li>
+<br>
+<br>
+  <table id="tablaCarrito">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio unitario</th>
+        <th>Precio total</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  
+    <tfoot>
+      <tr>
+        <td colspan="3" style="text-align:right">Total:</td>
+        <td id="totalPrecio">0</td>
+      </tr>
+    </tfoot>
+  
+  </table>
+  
+ <button>Guardar</button>
+  
+  <script>
+    const productoSelect = document.getElementById("producto");
+    const segundoProductoDiv = document.getElementById("segundoProducto");
+    const cantidadDiv = document.getElementById("cantidadDiv");
+    const cantidadDiv2 = document.getElementById("cantidadDiv2");
+
+    productoSelect.addEventListener("change", () => {
+        const productoSeleccionado = productoSelect.value;
+        if (productoSeleccionado !== "Seleccione un producto...") {
+            cantidadDiv.style.display = "block";
+            segundoProductoDiv.style.display = "block";
+        } else {
+            cantidadDiv.style.display = "none";
+            segundoProductoDiv.style.display = "none";
+            cantidadDiv2.style.display = "none";
+        }
+    });
+
+    const segundoProductoSelect = document.getElementById("segundoProductoSelect");
+
+    segundoProductoSelect.addEventListener("change", () => {
+        const segundoProductoSeleccionado = segundoProductoSelect.value;
+        if (segundoProductoSeleccionado !== "Ninguno") {
+            cantidadDiv2.style.display = "block";
+        } else {
+            cantidadDiv2.style.display = "none";
+        }
+    });
+</script>
+  
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  </body>
+</html>

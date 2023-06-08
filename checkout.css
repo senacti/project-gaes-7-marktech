@@ -1,0 +1,17 @@
+
+
+.container {
+	max-width: 960px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(0, 0, 0, .1);
+	padding: 10px;
+	text-align: center;
+}
