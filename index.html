@@ -9,10 +9,11 @@
     <title>Panne e caffe</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/">
-    <link rel="shortcut icon" href="panne.png">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    
+
+
 
 <link href="bootstrap.min.css" rel="stylesheet">
 
@@ -55,7 +56,7 @@
         z-index: 2;
         height: 2.75rem;
         overflow-y: hidden;
-        
+
       }
 
       .nav-scroller .nav {
@@ -67,16 +68,16 @@
         text-align: center;
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
-        
+
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
   <body>
-    
+
 <header>
   <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid" >
@@ -86,7 +87,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">         
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <br>
             <br>
             <br>
@@ -110,12 +111,19 @@
             <br>
             <br>
             <br>
-            <em><a class="nav-link disabled">Pedidos</a></em>
+            <em><a class="nav-link" href="mispedidos.html">Pedidos</a></em>
           </li>
-        </ul>      
+          <li class="nav-item">
+            <br>
+            <br>
+            <br>
+            <br>
+            <em><a class="nav-link" href="PQRS.html"> Quejas & Reclamos </a></em>
+          </li>
+        </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <button class="btn btn-outline" type="submit">Buscar</button>
         </form>
       </div>
     </div>
@@ -124,54 +132,53 @@
 
 <main>
 
-  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="1coffee-2303277_1280.jpg" alt="" svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <em><h1>Combos del día</h1></em>
-            <p></p>
-            <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="1coffee-2303277_1280.jpg" alt="" svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <em><h1>Combos del día</h1></em>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="cappuccino-756490_1280.jpg" alt="cafe" svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="150%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption">
+                <em><h1>Cafés y bebidas </h1></em>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="1bread-4077812_1280.jpg" alt="Panaderia"svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
+            <div class="container">
+              <div class="carousel-caption text-end">
+                <em><h1>Panaderia</h1></em>
+                <p></p>
+                <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
+              </div>
+            </div>
           </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-      <div class="carousel-item">
-        <img src="cappuccino-756490_1280.jpg" alt="cafe" svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="150%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <em><h1>Cafés y bebidas </h1></em>
-            <p></p>
-            <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <img src="1bread-4077812_1280.jpg" alt="Panaderia"svg class="bd-placeholder-img" width="100%" height="200%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <em><h1>Panaderia</h1></em>
-            <p></p>
-            <p><a class="btn btn-lg btn-primary" href="#">Ver todo</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
-
 
   <!-- Marketing messaging and featurettes
   ================================================== -->
@@ -216,7 +223,7 @@
         <img src="kitchen-1566964_1280.jpg" alt="cocina" svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em"></text></svg>
       </div>
     </div>
-    
+
     <hr class="featurette-divider">
 
     <!-- /END THE FEATURETTES -->
@@ -233,18 +240,22 @@
     <p>Cra 72q #75bb-65sur </p></center>
     <h1></h1>
     <br>
-    <br> 
+    <br>
     <br>
     <br>
     <p class="float-end"><a href="#">Inicio</a></p>
-    
+
     <p>&copy; 2017–2022 Panne e caffe, Inc. &middot; <a href="#">Privacidad</a> &middot; <a href="#">Terminos</a></p>
+    <div>
+      <img src="instagram.png   " alt="logo instagram" width="30" height="30">
+      <img src="   facebook-logo-black.webp   " alt="facebook" width="30" height="30">
+    </div>
   </footer>
 </main>
 
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
+
   </body>
 </html>
