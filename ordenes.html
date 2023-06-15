@@ -10,9 +10,9 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
-    
 
-    
+
+
 
 <link href="bootstrap.min.css" rel="stylesheet">
 
@@ -32,7 +32,7 @@
       .container {
         display: flex;
         justify-content: center;
-     
+
     }
 
       .bd-placeholder-img {
@@ -87,13 +87,13 @@
       }
     </style>
 
-    
+
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
   </head>
   <body>
-    
-    
+
+
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
     <img src="panne.png" alt="Panne e Caffé" class="logo" width="70%" height="70%">
@@ -116,10 +116,9 @@
         <ul class="nav flex-column">
           <div id="opciones"></div>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-              <br>
-              <br>
-            
+            <br>
+            <br>
+            <a class="nav-link active" aria-current="page" href="index.html">
               <span data-feather="home" class="align-text-bottom"></span>
               Inicio
             </a>
@@ -140,7 +139,7 @@
           <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-              Reportes
+              Reporte de ventas
             </a>
           </li>
           <li class="nav-item">
@@ -157,26 +156,28 @@
         <h1 class="h2">Ordenar</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
         </div>
-      </div>                  
-    </div>   
+      </div>
+    </div>
   </div>
-  
-  
+
+
     <div class="container my-5">
-    
+
 <form>
   <h3>Formulario de pedido</h3>
+  <br>
+  <br>
   <div class="mb-3">
-    <label for="nombreCompleto" class="form-label">Nombre completo</label>
+    <label for="nombreCompleto" class="form-label">Codigo de la empresa</label>
     <input type="text" class="form-control" id="nombreCompleto">
   </div>
   <div class="mb-3">
-    <label for="identificacion" class="form-label">Número de identificación</label>
+    <label for="identificacion" class="form-label">Cantidad de productos</label>
     <input type="text" class="form-control" id="identificacion">
   </div>
   <div class="mb-3">
-    <label for="codigo" class="form-label">Código</label>
-    <input type="text" class="form-control" id="codigo">
+    <label for="codigo" class="form-label">Código producto</label>
+    <input type="tex" class="form-control" id="codigo">
   </div>
   <div class="mb-3">
     <label for="producto" class="form-label">Producto</label>
@@ -222,10 +223,10 @@
       <input type="number" class="form-control" id="cantidad2">
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Solicitar pedido</button>
+  <center><button type="submit" class="btn btn-primary">Solicitar pedido</button></center>
 </form>
   </div>
-  
+
   <script>
     const productoSelect = document.getElementById("producto");
     const segundoProductoDiv = document.getElementById("segundoProducto");
@@ -255,7 +256,7 @@
         }
     });
 </script>
-  
+
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
