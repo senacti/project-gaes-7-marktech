@@ -1,136 +1,194 @@
-<!DOCTYPE html>
-<html class="5">
-<head>
-    <title>Registro de Productos</title>
-    <link rel="Sidebar" href="Registro.css">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.108.0">
+    <title>PQRS</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
+
+
+
+<link href="bootstrap.min.css" rel="stylesheet">
+
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #212529;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+      label {
+        font-size: 15px;
+        color: black;
+      }
+      input[type="text"], select {
+        font-size: 15px;
+        padding: auto;
+        color: black;
+      }
+      h3 {
+        font-size: 25px;
+      }
 
-        body::before {
-            content: "";
-            background-image: url("Collage de Fotos Moodboard Orgullo Photo Collage.png");
-            opacity: 0.3;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            
-        }
 
-        form {
-            margin: 30px auto;
-            max-width: 330px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 30px;
-            
-        }
 
-        h1 {
-            text-align: center;
-            color: #000000;
-            font-size: calc(1.3rem + .6vw);
-            margin-top: 0;
-            font-weight: 400;
-        }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-        label {
-            display: block;
-            font-size: 16px;
-            color: #000000;
-            margin-bottom: 10px;
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
+      }
 
-        input[type=text], input[type=email], input[type=password] {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-bottom: 20px;
-            font-size: 16px;
-            background-color: rgb(230, 230, 230);
-            color: #333;
-            transition: all 0.3s;
-            
-        }
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
 
-        input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
-            outline: none;
-            border: 2px solid #874a35;
-            background-color: #fff;
-            color: #333;
-            
-        }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
 
-        input[type=submit] {
-            background-color: #874a35;
-            color: #fff;
-            padding: 17px 90px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            margin: 20px auto 0;
-            display: block;
-            font-size: 18px;
-            transition: all 0.3s;
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
 
-        }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
 
-        input[type=submit]:hover {
-            background-color: #333;
-            color: #fff;
-            
-        }
-
-        .error {
-            color: #ff0000;
-            font-size: 14px;
-            margin-top: 5px;
-        }
-
-        .success {
-            color: #008000;
-            font-size: 14px;
-            margin-top: 5px;
-        }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
     </style>
-</head>
-<body>
-    
-    <form>
-        
-        <h1 class="h3 mb-3 fw-normal">Peticiones, Quejas, Reclamos y Sugerencias</h1>
-    
-            
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ingresa el nombre" required>
 
-            
-            <label for="email">Correo electrónico:</label>
-            <input type="text" id="email" name="email" placeholder="Ingresa correo electronico" required>
-
-            <label for="tipo">Tipo de PQRS:</label>
-            <select id="tipo" name="tipo" required>
-            
-                <option value="peticion">Peticion</option>
-                <option value="queja">Queja</option>
-                <option value="reclamo">Reclamo</option>
-                <option value="sugerencia">Sugerencia</option>
-              </select>
-              <label for="mensaje">Mensaje:</label>
-              <textarea id="mensaje" name="mensaje" required></textarea>
-          
-              <input type="submit" value="Enviar">
-        </form>
     
-    </body> 
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#">
+        <img src="panne.png" alt="" width="40%" width="40%">
+      </a>
+  </a>
+
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-nav">
+    <div class="nav-item text-nowrap">
+      <a class="nav-link px-3" href="sign-in.html">Cerrar sesión</a>
+    </div>
+  </div>
+</header>
+   
+        <div class="btn-toolbar mb-2 mb-md-0">
+        </div>
+      </div>                  
+    </div>   
+  </div>
+  <div style="padding-left: 200px" class="container my-5">
+    
+
+    <form class="card p-2">
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Peticiones, Quejas, Reclamos y Sugerencias </h4>
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid first name is required.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Valid last name is required.
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <label for="country" class="form-label">documento</label>
+            <select class="form-select" id="country" required>
+              <option> Cedula de cuidadania  </option>
+              <option> Pasaporte </option>
+              <option> Tarjeta de identidad </option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+    
+          <div class="col-12">
+            <label for="address" class="form-label"> N° Documento</label>
+            <input type="text" class="form-control" id="address" placeholder="" required>
+            <div class="invalid-feedback">
+              Please enter your shipping address.
+            </div>
+
+
+          <div class="col-12">
+            <label for="email" class="form-label">Correo electronico<span class="text-body-secondary">(Opcional)</span></label>
+            <input type="email" class="form-control" id="email" placeholder="iasdn@Ejemplo.com">
+            <div class="invalid-feedback">
+              Please enter a valid email address for shipping updates.
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <label for="country" class="form-label">Tipo de PQRS</label>
+            <select class="form-select" id="country" required>
+              <option> Peticiones </option>
+              <option> Quejas </option>
+              <option> Reclamos </option>
+              <option> Sugerencias </option>
+            </select>
+            <div class="invalid-feedback">
+              Please select a valid country.
+            </div>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <input type="submit" value="Enviar">
+
+
+</div>
+<br>
+<br>
+
+
+
+    </script>
+    
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  
+    </body>
+
+</html>
