@@ -6,8 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.108.0">
-    <title>Ordenes</title>
-
+    <title>Cliente</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
     
@@ -123,18 +122,7 @@
               Mis Datos  
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="shopping-cart" class="align-text-bottom"></span>
-              Quejas y reclamos 
-            </a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-              Mis puntos
-            </a>
+         
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
@@ -225,123 +213,9 @@
             <div class="invalid-feedback">
               Please select a valid country.
             </div>
-
-</div>
-<br>
-<br>
-<br>
-<br>    
-<li class="list-group-item d-flex justify-content-between lh-sm">
-  <form>
-    <label for="producto">Producto:</label>
-    <select id="producto">
-      <option value="">Selecciona un producto</option>
-      <option value="Rollo">Rollo</option>
-      <option value="Mogolla">Mogolla</option>
-      <option value="Coco">Coco</option>
-      <option value="Queso">Queso</option>
-      <option value="Roscon">Roscon</option>
-      <option value="Chicharrona">Chicharrona</option>
-      <option value="Calentano">Calentano</option>
-      
-    </select>
-    <label for="cantidad">Cantidad:</label>
-    <input type="number" id="cantidad" min="1" value="1">
-    <button type="button" onclick="agregarProducto()">Agregar</button>
-  </form>
-  
-
-  <script>
-    var carrito = [];
-    var precios = {
-      Rollo: 400,
-      Mogolla: 400,
-      Coco: 400,
-      Queso: 400,
-      Roscon: 400,
-      Chicharrona: 400,
-      Calentano: 400,
-
-    };
-
-    function agregarProducto() {
-      var producto = document.getElementById("producto").value;
-      var cantidad = parseInt(document.getElementById("cantidad").value);
-      if (producto && cantidad) {
-        if (!carrito[producto]) {
-          carrito[producto] = {
-            cantidad: cantidad,
-            precio: precios[producto]
-          };
-        } else {
-          carrito[producto].cantidad += cantidad;
-        }
-        actualizarTabla();
-      }
-    }
-
-    function actualizarTabla() {
-      var tabla = document.getElementById("tablaCarrito").getElementsByTagName("tbody")[0];
-      tabla.innerHTML = "";
-      var totalPrecio = 0;
-      for (var producto in carrito) {
-        var cantidad = carrito[producto].cantidad;
-        var precioUnitario = carrito[producto].precio;
-        var precioTotal = cantidad * precioUnitario;
-        totalPrecio += precioTotal;
-        var fila = tabla.insertRow();
-        var celdaProducto = fila.insertCell(0);
-        celdaProducto.innerHTML = producto;
-        var celdaCantidad = fila.insertCell(1);
-        celdaCantidad.innerHTML = cantidad;
-        var celdaPrecioUnitario = fila.insertCell(2);
-        celdaPrecioUnitario.innerHTML = precioUnitario;
-        var celdaPrecioTotal = fila.insertCell(3);
-        celdaPrecioTotal.innerHTML = precioTotal;
-      }
-      document.getElementById("totalPrecio").innerHTML = totalPrecio;
-    }
-
-    function confirmarCompra() {
-      var totalPrecio = 0;
-      for (var producto in carrito) {
-        var cantidad = carrito[producto].cantidad;
-        var precioUnitario = carrito[producto].precio;
-        var precioTotal = cantidad * precioUnitario;
-        totalPrecio += precioTotal;
-      }
-      if (totalPrecio > 0) {
-        alert("El precio total a pagar es: " + totalPrecio);
-        carrito = [];
-        actualizarTabla();
-      }
-    }
-  </script>
-</li>
-<br>
-<br>
-  <table id="tablaCarrito">
-    <thead>
-      <tr>
-        <th>Producto</th>
-        <th>Cantidad</th>
-        <th>Precio unitario</th>
-        <th>Precio total</th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  
-    <tfoot>
-      <tr>
-        <td colspan="3" style="text-align:right">Total:</td>
-        <td id="totalPrecio">0</td>
-      </tr>
-    </tfoot>
-  
-  </table>
-  
- <button>Guardar</button>
+  </div>
+<br>  
+<button>Guardar</button>
   
   <script>
     const productoSelect = document.getElementById("producto");
