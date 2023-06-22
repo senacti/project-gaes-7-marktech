@@ -13,7 +13,7 @@ body {
 }
 body::before {
   content: "";
-  background-image: url(../img/Collage\ de\ Fotos\ Moodboard\ Orgullo\ Photo\ Collage.png);
+  background-image: url(Collage\ de\ Fotos\ Moodboard\ Orgullo\ Photo\ Collage.png);
   opacity: 0.3;
   position: absolute;
   top: 0;
