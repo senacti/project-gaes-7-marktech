@@ -24,7 +24,7 @@ $sql = "INSERT INTO PQRS (idPQRS, codigo_pqrs, tipo_solicitud, cliente)
         VALUES (?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssss", $idPQRS, $codigo_pqrs, $tipo_solicitud, $cliente);
+$stmt->bind_param("ssss", $idPQRS, $codigo_pqrs, $tipo_solicitud, $cliente);
 
 // Ejecutar la consulta y verificar si fue exitosa
 if ($stmt->execute()) {
