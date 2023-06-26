@@ -140,8 +140,8 @@
                 <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
               </div>
               <div class="btn-group me-2">
-                <a href="../for_admin.html" class="btn btn-sm btn-outline-secondary">Agregar Producto</a>
-                <a class="btn btn-sm btn-outline-secondary">Editar Producto</a>
+                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Agregar Producto</button>
+
               </div>
             </div>
           </div>
@@ -157,9 +157,22 @@
                   <th scope="col">Fecha Caducidad</th>
                   <th scope="col">ID Producto</th>
                   <th scope="col">Cantidad</th>
+                  <th scope="col">Acciones</th>
                 </tr>
               </thead>
               <tbody>
+                <tr>
+                  <td>Ejemplo 1</td>
+                  <td>$10.00</td>
+                  <td>Tipo 1</td>
+                  <td>2023-06-26</td>
+                  <td>001</td>
+                  <td>10</td>
+                  <td>
+                    <button class="btn btn-sm btn-primary">Editar</button>
+                    <button class="btn btn-sm btn-danger">Eliminar</button>
+                  </td>
+                </tr>
                 <!-- Aquí se agregarán los productos -->
               </tbody>
             </table>
@@ -168,10 +181,53 @@
       </div>
     </div>
 
+    <!-- Modal Agregar Producto -->
+    <div class="modal fade" id="agregarProductoModal" tabindex="-1" aria-labelledby="agregarProductoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="agregarProductoModalLabel">Agregar Producto</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nombreProducto" class="form-label">Nombre Producto</label>
+                <input type="text" class="form-control" id="nombreProducto">
+              </div>
+              <div class="mb-3">
+                <label for="valorProducto" class="form-label">Valor Producto</label>
+                <input type="text" class="form-control" id="valorProducto">
+              </div>
+              <div class="mb-3">
+                <label for="tipoProducto" class="form-label">Tipo de Producto</label>
+                <input type="text" class="form-control" id="tipoProducto">
+              </div>
+              <div class="mb-3">
+                <label for="fechaCaducidad" class="form-label">Fecha Caducidad</label>
+                <input type="date" class="form-control" id="fechaCaducidad">
+              </div>
+              <div class="mb-3">
+                <label for="idProducto" class="form-label">ID Producto</label>
+                <input type="text" class="form-control" id="idProducto">
+              </div>
+              <div class="mb-3">
+                <label for="cantidad" class="form-label">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary">Guardar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-    <script src="dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6BdGpe9k9QR9SPFZhlVDBpsKaPOrXlKo" crossorigin="anonymous"></script><script src="dashboard.js"></script>
   </body>
-</html>
+  </html>
