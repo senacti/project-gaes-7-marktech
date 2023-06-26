@@ -13,19 +13,18 @@ if ($conn->connect_error) {
 }
 
 // Obtener los valores del formulario
-$nombre = $_POST["firstName"];
-$apellido = $_POST["lastName"];
-$documento = $_POST["address"];
-$email = $_POST["email"];
-$tipoPQRS = $_POST["country"];
-$mensaje = $_POST["mensaje"];
+$idPQRS = $_POST["idPQRS"];
+$codigo_pqrs = $_POST["codigo_pqrs"];
+$tipo_solicitud = $_POST["tipo_solicitud"];
+$cliente = $_POST["cliente"];
+
 
 // Preparar la consulta SQL para insertar los datos en la tabla correspondiente
-$sql = "INSERT INTO nombre_de_la_tabla (nombre, apellido, documento, email, tipo_pqrs, mensaje)
-        VALUES (?, ?, ?, ?, ?, ?)";
+$sql = "INSERT INTO PQRS (idPQRS, codigo_pqrs, tipo_solicitud, cliente)
+        VALUES (?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssssss", $nombre, $apellido, $documento, $email, $tipoPQRS, $mensaje);
+$stmt->bind_param("ssssss", $idPQRS, $codigo_pqrs, $tipo_solicitud, $cliente);
 
 // Ejecutar la consulta y verificar si fue exitosa
 if ($stmt->execute()) {
