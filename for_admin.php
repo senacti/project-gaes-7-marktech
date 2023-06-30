@@ -1,10 +1,3 @@
-<?php
-$conn = mysqli_connect('localhost', 'root', '', 'conection_pane_cafe');
-if (!$conn) {
-  die("Error de conexión: " . mysqli_connect_error());
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,8 +90,11 @@ if (!$conn) {
     </style>
 </head>
 <body>
-    <form>
+    <form action="nuevo_producto.php" method="post">
         <h1>Registro de Productos</h1>
+
+        <label for="idProducto">ID del Producto</label>
+        <input type="text" id="idProducto" name="idProducto" placeholder="Ingrese el ID del producto" required>
     
         <label for="Nombre">Nombre del Producto</label>
         <input type="text" id="Nombre" name="Nombre" placeholder="Ingrese el nombre del producto" required>
@@ -112,9 +108,8 @@ if (!$conn) {
         <label for="fecha">Fecha Caducidad:</label>
         <input type="date" id="fecha" name="fecha" style="width: 100%;" required><br>
         <br>
-        
-        <label for="idProducto">ID del Producto</label>
-        <input type="text" id="idProducto" name="idProducto" placeholder="Ingrese el ID del producto" required>
+
+
 
         <label for="Cantidad">Cantidad</label>
         <input type="text" id="Cantidad" name="Cantidad" placeholder="Ingrese la cantidad" required>
