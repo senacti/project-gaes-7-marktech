@@ -1,5 +1,6 @@
 <?php
 // Obtener los datos del formulario
+$id_usuario = $_POST['id'];
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['email'];
@@ -11,19 +12,16 @@ if ($password !== $confirm_password) {
     die('Las contraseñas no coinciden');
 }
 
-// Conectar a la base de datos (modifica estos valores según tu configuración)
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'panne_e_cafee';
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die('Error al conectar con la base de datos: ' . $conn->connect_error);
-}
+  // conexion base de datos
+  $conn = mysqli_connect("localhost", "root", "","conection_pane_cafe" );
+                
+  // verificar conexion 
+  if (!$conn){
+    die("error al conectar a la base de datos:" . mysqli_connect_error());
+  }
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO usuarios (nombre, apellido, email, password) VALUES ('$nombre', '$apellido', '$email', '$password')";
+$sql = "INSERT INTO usuario (id_usuario, nombre_u, apellido_u, email_u, contraseña, confirm_password, idPago) VALUES ('$id_usuario','$nombre', '$apellido', '$email', '$password','$confirm_password',)";
 
 if ($conn->query($sql) === TRUE) {
     echo 'Registro exitoso';
