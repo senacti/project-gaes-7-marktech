@@ -109,11 +109,14 @@
 </head>
 <body>
     
-    <form>
+    <form action="Registro1.php" method="post">
         
         <h1 class="h3 mb-3 fw-normal">Registro de</h1>
         <h1 class="h3 mb-3 fw-normal">Usuario</h1>
     
+            <label for="id">Id Usuario:</label>
+            <input type="text" id="id" name="id" placeholder="Ingresa un ID" required>
+        
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
     
@@ -125,11 +128,14 @@
     
             <label for="password">Contraseña:</label>
             <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
-    
+            
+
             <label for="confirm_password">Confirmar contraseña:</label>
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirma tu contraseña" required>
-    
+            
+            <button onclick="togglePassword()">Mostrar contraseña</button>
+            
             <input type="submit" value="Registrarse"> 
-        </form>
-    
+
+            </form>
     </body> 
