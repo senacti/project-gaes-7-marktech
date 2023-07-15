@@ -140,7 +140,8 @@
                 <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
               </div>
               <div class="btn-group me-2">
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal">Agregar Producto</button>
+              <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#agregarProductoModal" onclick="window.location.href = '/formulario_agregar_producto.php'">Agregar Producto</button>
+
 
               </div>
             </div>
@@ -151,19 +152,18 @@
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
-                <th scope="col">ID Producto</th>
-                  <th scope="col">Nombre Producto</th>
+                <th scope="col">Nombre Producto</th>
                   <th scope="col">Valor Producto</th>
                   <th scope="col">Tipo de Producto</th>
                   <th scope="col">Fecha Caducidad</th>
-                  <th scope="col">Cantidad</th>
-                  <th scope="col">Acciones</th>
+                  <th scope="col">id producto</th>
+                  <th scope="col">cantidad</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
                 // conexion base de datos
-                $conn = mysqli_connect("localhost", "root", "","panne_e_cafe" );
+                $conn = mysqli_connect("localhost", "root", "","conection_pane_cafe" );
                 
                 // verificar conexion 
                 if (!$conn){
@@ -171,19 +171,19 @@
                 }
 
                 //consultar tabla productos 
-                $query = "SELECT * FROM producto";
+                $query = "SELECT * FROM Inventario_Productos";
                 $result = mysqli_query($conn, $query);
 
                 //mostrar los registros en la tabla 
                 while ($row = mysqli_fetch_assoc($result)){
                   echo "<tr>";
-                  echo "<td>" . $row ['ID Producto'] . "</td>";
-                  echo "<td>" . $row ['Nombre Producto'] . "</td>";
-                  echo "<td>" . $row ['Valor Producto'] . "</td>";
-                  echo "<td>" . $row ['Tipo de Producto'] . "</td>";
-                  echo "<td>" . $row ['Fecha Caducidad'] . "</td>";
-                  echo "<td>" . $row ['Cantidad'] . "</td>";
-                  echo "<th><a class='edit-link' href='editar_producto.php?codigo=" . $row['ID Producto'] . "'Editar></a> | <a class= 'delete-link' href='eliminar_producto.php?codigo= " . $row['codigo_producto'] . "'>Eliminar</a></td>";
+                  echo "<td>" . $row ['nom_producto'] . "</td>";
+                  echo "<td>" . $row ['valor_producto'] . "</td>";
+                  echo "<td>" . $row ['tipo_producto'] . "</td>";
+                  echo "<td>" . $row ['fecha_caducidad'] . "</td>";
+                  echo "<td>" . $row ['idProducto'] . "</td>";
+                  echo "<td>" . $row ['cantidad'] . "</td>";
+                  echo "<th><a class='btn btn-sm btn-outline-secondary' href='editar_producto.php?codigo=" . $row['idProducto'] . "'>Editar</a>  <a class='btn btn-sm btn-outline-secondary' href='eliminar_producto.php?codigo=" . $row['idProducto'] . "'>Eliminar</a></td>";
                   echo "</tr>";  
                 }
                 ?>
