@@ -1,34 +1,38 @@
 <?php
-// Verificar si se ha enviado el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Obtener los datos del formulario
-    $ID_Producto = $_POST['idProducto'];
-    $Nombre_Producto = $_POST['Nombre'];
-    $Valor_Producto = $_POST['Valor'];
-    $Tipo_Producto = $_POST['Tipo'];
-    $Fecha_Caducidad = $_POST['fecha'];
-    $Cantidad = $_POST['Cantidad'];
+// Conexión a la base de datos 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "conection_pane_cafe";
 
-    // Conexión a la base de datos
-    $conn = mysqli_connect("localhost", "root", "", "nombre base de datos");
+// Recibir datos del formulario
+$nombre_producto = $_POST['nombre_producto'];
+$valor_producto = $_POST['valor_producto'];
+$tipo_producto = $_POST['tipo_producto'];
+$fecha_caducidad = $_POST['fecha_caducidad'];
+$id_producto = $_POST['id_producto'];
+$cantidad = $_POST['cantidad'];
 
-    // Verificar la conexión
-    if (!$conn) {
-        die("Error al conectar a la base de datos: " . mysqli_connect_error());
-    }
 
-    // Insertar el nuevo producto en la base de datos
-    $query = "INSERT INTO producto (codigo_producto, nombre, precio_unidad, categoria, talla, color, estado_producto)
-              VALUES ('$ID_Producto', '$Nombre_Producto', '$Valor_Producto', '$Tipo_Producto', '$Fecha_Caducidad', '$Cantidad')";
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-    if (mysqli_query($conn, $query)) {
-        echo "El producto se ha agregado correctamente.";
-    } else {
-        echo "Error al agregar el producto: " . mysqli_error($conn);
-    }
-
-    // Cerrar la conexión
-    mysqli_close($conn);
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Error en la conexión: " . $conn->connect_error);
 }
-?>
 
+// Llamar al procedimiento almacenado
+$sql = "CALL agregar_producto('$nombre_producto', $valor_producto, '$tipo_producto', '$fecha_caducidad', '$id_producto', $cantidad)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "Producto agregado exitosamente.";
+        // Redirigir a la página de inicio después de 2 segundos
+        header("refresh:2; url=dashboard_admin.php");
+} else {
+    echo "Error al agregar el producto: " . $conn->error;
+}
+
+// Cerrar la conexión
+$conn->close();
+?>
