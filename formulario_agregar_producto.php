@@ -98,7 +98,9 @@
         Tipo de Producto: <input type="text" name="tipo_producto" required><br>
         Fecha Caducidad: <input type="date" name="fecha_caducidad" required><br>
         ID Producto: <input type="text" name="id_producto" required><br>
+        fecha Produccion: <input type="date" name="fecha_produccion" required><br>
         Cantidad: <input type="number" name="cantidad" required><br>
+        ID Salidad <input type="number" name="idSalidas" required><br>
         <input type="submit" value="Agregar Producto">
     </form>
 </body> 

@@ -93,26 +93,32 @@
         if ($result->num_rows > 0) {
             // Mostrar los productos en una tabla
             echo "<table border='1'>
-                    <tr>
-                        <th>ID Producto</th>
-                        <th>Nombre Producto</th>
-                        <th>Valor Producto</th>
-                        <th>Tipo Producto</th>
-                        <th>Cantidad</th>
-                        <th>Acción</th>
-                    </tr>";
+                <tr>
+                    <th>ID Producto</th>
+                    <th>Nombre Producto</th>
+                    <th>Valor Producto</th>
+                    <th>Tipo Producto</th>
+                    <th>Cantidad</th>
+                    <th>Fecha Caducidad</th>
+                    <th>Fecha Producción</th>
+                    <th>idSalidas</th>
+                    <th>Acción</th>
+                </tr>";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>
-                        <td>".$row['idProducto']."</td>
-                        <td>".$row['nom_producto']."</td>
-                        <form method='post' action=''>
-                            <input type='hidden' name='idProducto' value='".$row['idProducto']."'>
-                            <td><input type='text' name='valor_producto' value='".$row['valor_producto']."'></td>
-                            <td><input type='text' name='tipo_producto' value='".$row['tipo_producto']."'></td>
-                            <td><input type='text' name='cantidad' value='".$row['cantidad']."'></td>
-                            <td><input type='submit' value='Guardar cambios'></td>
-                        </form>
-                      </tr>";
+                    <td>".$row['idProducto']."</td>
+                    <td>".$row['nom_producto']."</td>
+                    <form method='post' action=''>
+                        <input type='hidden' name='idProducto' value='".$row['idProducto']."'>
+                        <td><input type='text' name='valor_producto' value='".$row['valor_producto']."'></td>
+                        <td><input type='text' name='tipo_producto' value='".$row['tipo_producto']."'></td>
+                        <td><input type='text' name='cantidad' value='".$row['cantidad']."'></td>
+                        <td><input type='text' name='fecha_caducidad' value='".$row['fecha_caducidad']."' readonly></td>
+                        <td><input type='text' name='fecha_produccion' value='".$row['fecha_produccion']."' readonly></td>
+                        <td><input type='text' name='idSalidas' value='".$row['idSalidas']."' readonly></td>
+                        <td><input type='submit' value='Guardar cambios'></td>
+                    </form>
+                  </tr>";
             }
             echo "</table>";
         } else {

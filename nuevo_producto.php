@@ -11,7 +11,9 @@ $valor_producto = $_POST['valor_producto'];
 $tipo_producto = $_POST['tipo_producto'];
 $fecha_caducidad = $_POST['fecha_caducidad'];
 $id_producto = $_POST['id_producto'];
+$fecha_produccion =  $_POST['fecha_produccion'];
 $cantidad = $_POST['cantidad'];
+$idSalidas = $_POST['idSalidas'];
 
 
 // Crear la conexión
@@ -23,7 +25,7 @@ if ($conn->connect_error) {
 }
 
 // Llamar al procedimiento almacenado
-$sql = "CALL agregar_producto('$nombre_producto', $valor_producto, '$tipo_producto', '$fecha_caducidad', '$id_producto', $cantidad)";
+$sql = "CALL agregar_producto('$nombre_producto', $valor_producto, '$tipo_producto', '$fecha_caducidad', '$id_producto', '$fecha_produccion' , '$cantidad', '$idSalidas')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Producto agregado exitosamente.";

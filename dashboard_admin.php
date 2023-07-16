@@ -157,7 +157,9 @@
                   <th scope="col">Tipo de Producto</th>
                   <th scope="col">Fecha Caducidad</th>
                   <th scope="col">id producto</th>
+                  <th scope="col">fecha_produccion</th>
                   <th scope="col">cantidad</th>
+                  <th scope="col">idSalidas</th>
                 </tr>
               </thead>
               <tbody>
@@ -182,7 +184,9 @@
                   echo "<td>" . $row ['tipo_producto'] . "</td>";
                   echo "<td>" . $row ['fecha_caducidad'] . "</td>";
                   echo "<td>" . $row ['idProducto'] . "</td>";
+                  echo "<td>" . $row ['fecha_produccion'] . "</td>";
                   echo "<td>" . $row ['cantidad'] . "</td>";
+                  echo "<td>" . $row ['idSalidas'] . "</td>";
                   echo "<th><a class='btn btn-sm btn-outline-secondary' href='editar_producto.php?codigo=" . $row['idProducto'] . "'>Editar</a>  <a class='btn btn-sm btn-outline-secondary' href='eliminar_producto.php?codigo=" . $row['idProducto'] . "'>Eliminar</a></td>";
                   echo "</tr>";  
                 }
