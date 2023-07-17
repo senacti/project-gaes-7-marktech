@@ -14,73 +14,48 @@
 
 <link href="bootstrap.min.css" rel="stylesheet">
 
-    <style>
-      label {
-        font-size: 15px;
-        color: black;
-      }
-      input[type="text"], select {
-        font-size: 15px;
-        padding: auto;
-        color: black;
-      }
-      h3 {
-        font-size: 25px;
-      }
+<style>
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
 
+  .message-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
 
+  .message-box h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
 
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+  .message-box button {
+    padding: 10px 20px;
+    background-color: #8B4513;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-
-      .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-      }
-
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-      }
-
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
-
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
-
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
-    </style>
+  .message-box button:hover {
+    background-color: #654321;
+  }
+</style>
 
     
     <!-- Custom styles for this template -->
@@ -111,71 +86,96 @@
   <div style="padding-left: 200px" class="container my-5">
     
 
-    <form class="card p-2" method="POST" action="guardar_pqrs.php">
-    <div class="col-md-7 col-lg-8">
-      <h4 class="mb-3">Peticiones, Quejas, Reclamos y Sugerencias </h4>
-      <form class="needs-validation" novalidate>
+    <form action="guardar_pqrs.php" method="POST">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Peticiones, Quejas, Reclamos y Sugerencias</h4>
         <div class="row g-3">
           <div class="col-sm-6">
             <label for="firstName" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="firstName" name="nombre_cliente" placeholder="" value="" required>
             <div class="invalid-feedback">
-              Valid first name is required.
+              Por favor ingresa un nombre válido.
             </div>
           </div>
-
+    
           <div class="col-sm-6">
             <label for="lastName" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <input type="text" class="form-control" id="lastName" name="apellido_cliente" placeholder="" value="" required>
             <div class="invalid-feedback">
-              Valid last name is required.
+              Por favor ingresa un apellido válido.
             </div>
           </div>
-
+    
           <div class="col-md-5">
-            <label for="country" class="form-label">documento</label>
-            <select class="form-select" id="country" required>
-              <option> Cedula de cuidadania  </option>
-              <option> Pasaporte </option>
-              <option> Tarjeta de identidad </option>
+            <label for="country" class="form-label">Tipo de Documento</label>
+            <select class="form-select" id="country" name="tipo_documento" required>
+              <option value="Cedula de cuidadania">Cédula de cuidadania</option>
+              <option value="Pasaporte">Pasaporte</option>
+              <option value="Tarjeta de identidad">Tarjeta de identidad</option>
             </select>
             <div class="invalid-feedback">
-              Please select a valid country.
+              Por favor selecciona un tipo de documento válido.
             </div>
+          </div>
     
           <div class="col-12">
-            <label for="address" class="form-label"> N° Documento</label>
-            <input type="text" class="form-control" id="address" placeholder="" required>
+            <label for="address" class="form-label">N° Documento</label>
+            <input type="text" class="form-control" id="address" name="numero_documento" placeholder="" required>
             <div class="invalid-feedback">
-              Please enter your shipping address.
-            </div>
-
-
-          <div class="col-12">
-            <label for="email" class="form-label">Correo electronico<span class="text-body-secondary">(Opcional)</span></label>
-            <input type="email" class="form-control" id="email" placeholder="iasdn@Ejemplo.com">
-            <div class="invalid-feedback">
-              Please enter a valid email address for shipping updates.
+              Por favor ingresa un número de documento válido.
             </div>
           </div>
-
+    
+          <div class="col-12">
+            <label for="email" class="form-label">Correo electrónico <span class="text-body-secondary">(Opcional)</span></label>
+            <input type="email" class="form-control" id="email" name="correo_electronico" placeholder="correo@example.com">
+            <div class="invalid-feedback">
+              Por favor ingresa una dirección de correo electrónico válida.
+            </div>
+          </div>
+    
           <div class="col-md-5">
             <label for="country" class="form-label">Tipo de PQRS</label>
-            <select class="form-select" id="country" required>
-              <option> Peticiones </option>
-              <option> Quejas </option>
-              <option> Reclamos </option>
-              <option> Sugerencias </option>
+            <select class="form-select" id="country" name="tipo_solicitud" required>
+              <option value="Peticiones">Peticiones</option>
+              <option value="Quejas">Quejas</option>
+              <option value="Reclamos">Reclamos</option>
+              <option value="Sugerencias">Sugerencias</option>
             </select>
             <div class="invalid-feedback">
-              Please select a valid country.
+              Por favor selecciona un tipo de PQRS válido.
             </div>
-
+          </div>
+    
+          <div class="col-12">
             <label for="mensaje">Mensaje:</label>
-            <textarea id="mensaje" name="mensaje" required></textarea>
-
-            <input type="submit" value="Enviar">
-
+            <textarea id="mensaje" name="mensaje" class="form-control" required></textarea>
+            <div class="invalid-feedback">
+              Por favor ingresa un mensaje válido.
+            </div>
+          </div>
+          
+          <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </div>
+      </div>
+    </form>
+  <style>
+        .message-box button {
+        padding: 10px 20px;
+        background-color: #8B4513;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .message-box button:hover {
+        background-color: #8B4513;
+      }
+    </style>
 
 </div>
 <br>
@@ -188,7 +188,64 @@
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+    <style>
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
   
+      .message-box {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+  
+      .message-box h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+  
+      .message-box button {
+        padding: 10px 20px;
+        background-color: #8B4513;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+  
+      .message-box button:hover {
+        background-color: #8B4513;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="overlay" id="overlay" style="display: none;">
+      <div class="message-box">
+        <h3>Su mensaje se ha enviado correctamente, gracias por ayudarnos a mejorar</h3>
+        <button onclick="window.location.href='index.html'">Regresar al inicio</button>
+      </div>
+    </div>
+    <script>
+      document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+  
+        // Mostrar el cuadro de mensaje
+        document.getElementById('overlay').style.display = 'flex';
+      });
+    </script>
     </body>
 
 </html>
