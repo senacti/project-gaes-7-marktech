@@ -46,46 +46,46 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="bootstrap.min.css" rel="stylesheet">
 
     <style>
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+    }
 
-        .message-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+    .message-box {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
 
-        .message-box h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
+    .message-box h3 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
 
-        .message-box button {
-            padding: 10px 20px;
-            background-color: #8B4513;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+    .message-box button {
+        padding: 10px 20px;
+        background-color: #8B4513;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
 
-        .message-box button:hover {
-            background-color: #654321;
-        }
+    .message-box button:hover {
+        background-color: #654321;
+    }
     </style>
 
 
@@ -100,7 +100,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </a>
         </a>
 
-        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="navbar-nav">
@@ -118,62 +120,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div style="padding-left: 200px" class="container my-5">
 
         <style>
-            .message-box button {
-                padding: 10px 20px;
-                background-color: #8B4513;
-                color: #fff;
-                border: none;
-                border-radius: 5px;
-                font-size: 16px;
-                cursor: pointer;
-                transition: background-color 0.3s;
-            }
-
-            .message-box button:hover {
-                background-color: #8B4513;
-            }
-        </style>
-
-    </div>
-    <br>
-    <br>
-
-    </script>
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
-    </script>
-    <script src="dashboard.js"></script>
-    <style>
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-        }
-
-        .message-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .message-box h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
         .message-box button {
             padding: 10px 20px;
             background-color: #8B4513;
@@ -188,6 +134,27 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .message-box button:hover {
             background-color: #8B4513;
         }
+        </style>
+
+    </div>
+    <br>
+    <br>
+
+    </script>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+        integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+        integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous">
+    </script>
+    <script src="dashboard.js"></script>
+    <style>
+    .centrar {
+        padding-left: 750px;
+    }
     </style>
     </head>
 
@@ -199,12 +166,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         </div>
         <script>
-            document.querySelector('form').addEventListener('submit', function(event) {
-                event.preventDefault();
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-                // Mostrar el cuadro de mensaje
-                document.getElementById('overlay').style.display = 'flex';
-            });
+            // Mostrar el cuadro de mensaje
+            document.getElementById('overlay').style.display = 'flex';
+        });
         </script>
     </body>
 
@@ -216,39 +183,45 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
     <title>Formulario PQRS</title>
 </head>
+<div class="centrar">
 
-<body>
-    <h1>Formulario PQRS</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-        <label for="tipo_solicitud">Tipo de Solicitud:</label>
-        <select name="tipo_solicitud" required>
-            <option value="Peticiones">Peticiones</option>
-            <option value="Quejas">Quejas</option>
-            <option value="Reclamos">Reclamos</option>
-            <option value="Sugerencias">Sugerencias</option>
-        </select><br>
+    <body>
+        <h1>Formulario PQRS</h1>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
 
-        <label for="nombre_cliente">Nombre:</label>
-        <input type="text" name="nombre_cliente" required><br>
+            <label for="nombre_cliente">Nombre:</label><br>
+            <input type="text" name="nombre_cliente" required><br>
 
-        <label for="apellido_cliente">Apellido:</label>
-        <input type="text" name="apellido_cliente" required><br>
+            <label for="apellido_cliente">Apellido:</label><br>
+            <input type="text" name="apellido_cliente" required><br>
 
-        <label for="tipo_documento">Tipo de Documento:</label>
-        <input type="text" name="tipo_documento" required><br>
+            <label for="tipo_documento">Tipo de Documento:</label><br>
+            <select name="tipo_documento" required>
+                <option value="Cédula de ciudadania">Cédula de ciudadania</option>
+                <option value="Tarjeta de identida">Tarjeta de identidad</option>
+                <option value="Cédula de extranjeria">Cédula de extranjeria</option>
+            </select><br>
 
-        <label for="numero_documento">Número de Documento:</label>
-        <input type="text" name="numero_documento" required><br>
+            <label for="numero_documento">Número de Documento:</label><br>
+            <input type="text" name="numero_documento" required><br>
 
-        <label for="correo_electronico">Correo Electrónico:</label>
-        <input type="email" name="correo_electronico"><br>
+            <label for="correo_electronico">Correo Electrónico:</label><br>
+            <input type="email" name="correo_electronico"><br>
+            <label for="tipo_solicitud">Tipo de Solicitud:</label><br>
+            <select name="tipo_solicitud" required>
+                <option value="Peticiones">Petición</option>
+                <option value="Quejas">Quejas</option>
+                <option value="Reclamos">Reclamos</option>
+                <option value="Sugerencias">Sugerencias</option>
+            </select><br>
 
-        <label for="mensaje">Mensaje:</label><br>
-        <textarea name="mensaje" rows="4" cols="50" required></textarea><br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea name="mensaje" rows="4" cols="50" required></textarea><br>
 
-        <input type="submit" value="Enviar">
-    </form>
-</body>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</div>
 
 </html>
 
