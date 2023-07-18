@@ -121,9 +121,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="PQRS.php">
+              <a class="nav-link" href="dashboard_pqrs.php">
                 <span data-feather="layers" class="align-text-bottom"></span>
                 PQRS
+                
               </a>
             </li>
           </ul>
