@@ -4,6 +4,7 @@ $username = "root";
 $password = "";
 $dbname = "conection_pane_cafe";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 
@@ -25,9 +26,9 @@ if ($result->num_rows > 0) {
     if ($usuario === "Cliente") {
         header("Location: cliente.html");
     } elseif ($usuario === "Vendedor") {
-        header("Location: ventas.php");
+        header("Location: dashboard_venta.html");
     } elseif ($usuario === "Administrador") {
-        header("Location: dashboard_admin.php");
+        header("Location: dashboard_admin.html");
     } else {
         echo "Por favor, seleccione una opción de usuario.";
     }
