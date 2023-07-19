@@ -7,7 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $contraseña = $_POST['password'];
 
-    $servername = "localhost";
+   
+    $servername = "127.0.0.1";
     $username = "root";
     $password = "";
     $dbname = "conection_pane_cafe";
