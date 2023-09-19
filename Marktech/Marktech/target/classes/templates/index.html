@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+	<div class = "container mt-4">
+		<a th:href="@{/new}" class="btn btn-primary">Nuevo</a>
+		<table class = "table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>PRODUCTO</th>
+					<th>STOCK</th>
+					<th>PRECIO</th>
+					<th>ACCIONES</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="producto:${producto}">
+					<td th:text="${producto.id}"></td>
+					<td th:text="${producto.name}"></td>
+					<td th:text="${producto.stock}"></td>
+					<td th:text="${producto.precio}"></td>
+					<td>
+					<a th:href="@{/editar/}+${producto.id}" class ="btn btn-warning">Editar</a>
+					<a th:onclick="eliminar([[${producto.id}]])"class ="btn btn-danger">Eliminar</a>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="funciones.js"></script>
+</body>
+</html>
